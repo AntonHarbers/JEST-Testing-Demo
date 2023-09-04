@@ -1,4 +1,4 @@
-import {Calculator, capitalize, reverseString} from './test_practice';
+import {Calculator, capitalize, reverseString, analyzeArray, caesarCipher} from './test_practice';
 
 describe('#capitalize', () => {
     test('capitalizes the first letter of a string', () => {
@@ -78,3 +78,48 @@ describe('Calculator OBJECT', () => {
         });
     });
 });
+
+describe('#analyzeArray', () => {
+    test('Returns average, min, max and length of a given array', () => {
+        const arr = [3,8,4,10,22,13];
+        const test = analyzeArray(arr);
+
+        expect(test).toEqual({average:10, min:3,max:22,length:6})
+    });
+
+    test('Returns NaN average, null min, null max and 0 length values of an empty array', () => {
+        const arr = [];
+        const test = analyzeArray(arr);
+
+        expect(test).toEqual({average: NaN, min:null,max:null,length:0})
+    });
+
+    test('Returns NaN average, [] min and c max values of an array of letters and correct length of the array', () => {
+        const arr = ['a','b','c',4,[]];
+        const test = analyzeArray(arr);
+
+        expect(test).toEqual({average:NaN, min: [],max:'c',length:5})
+    });
+});
+
+describe('#caesarCipher', () => {
+    test('Returns a string with each letter shifted by a given shift factor while maintaining capitalization', () => {
+        const test = caesarCipher('Hello World', 5);
+
+        expect(test).toBe('Mjqqt Btwqi');
+    });
+
+    test('Returns a caesarCipher string checking for wrapping from z to a', () => {
+        const test = caesarCipher('Zoom Zoom', 10);
+
+        expect(test).toBe('Jyyw Jyyw');
+    });
+
+    test('Returns a caesarCipher string checking for punctuation', () => {
+        const test = caesarCipher('Hello! World :)', 10);
+
+        expect(test).toBe('Rovvy! Gybvn :)')
+    })
+});
+
+
