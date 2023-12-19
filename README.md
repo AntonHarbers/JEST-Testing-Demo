@@ -1,5 +1,7 @@
 # JEST Testing Demo - The Odin Project
 
+![Repo Image](/repoImage.png)
+
 ## DIY
 
 If you would like to clone this repo and run the tests yourself or tweak any of the code, feel free to do so. The tests can be run with the following cmd command (must have npm, node and jest installed):
@@ -24,6 +26,7 @@ CMD:
     package-lock.json
     package.json
     README.md               -> This readme file
+    repoImage.png           -> The image at the beginning of this readme file
 ```
 
 ## Key Concepts
